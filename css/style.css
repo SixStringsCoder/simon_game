@@ -1,0 +1,111 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 255, 0, .8);
+}
+
+header, footer {
+  width: 100vw;
+  height: auto;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid black;
+  background: gold;
+}
+
+footer {
+  position: sticky;
+  border-top: 1px solid black;
+}
+
+#outerbody {
+  width: 650px;
+  height: 650px;
+  background: #000;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+#pad-container {
+/*   border: 1px solid green; */
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+.touchpads {
+/*   border: 1px solid red; */
+  width: 280px;
+  height: 280px;
+}
+#pad1 {
+  border-radius: 100% 0 0 0;
+  margin: 0 10px 10px 0;
+  background: rgba(204, 255, 0, .8);
+}
+#pad2 {
+  border-radius: 0 100% 0 0;
+  margin: 0 0 10px 10px;
+  background: rgba(255, 0, 204, .8);
+}
+#pad3 {
+  border-radius: 0 0 0 100%;
+  margin: 10px 10px 0 0;
+  background: rgba(255, 204, 51, .8);
+}
+#pad4 {
+  border-radius: 0 0 100% 0;
+  margin: 10px 0 0 10px;
+  background: rgba(170, 240, 209, .8);
+}
+#pad1:active {
+   background: rgba(204, 255, 0, 1);
+}
+#pad2:active {
+  background: rgba(255, 0, 204, 1);
+}
+#pad3:active {
+  background: rgba(255, 204, 51, 1);
+}
+#pad4:active {
+  background: rgba(170, 240, 209, 1);
+}
+
+#control-panel {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 250px;
+  height: 250px;
+  background: black;
+  border-radius: 50%;
+  border-radius: 100%;
+}
+
+#control-panel h3 {
+  margin: 25px 0;
+/*   padding: 0; */
+  font-family: 'Coda Caption', sans-serif;
+  font-size: 2.3rem;
+  color: #FFF;
+}
+
+#ctrl-btn-container {
+  width: 220px;
+  height: 110px;
+  border-radius:  0 0 220px 220px;
+  background: silver;
+}
