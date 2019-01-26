@@ -2,8 +2,11 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="SteveHanlon" content="JS Simon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Coda+Caption:800" rel="stylesheet">
     <title>Simon Game with JavaScript</title>
   </head>
   <body>
@@ -20,11 +23,35 @@
 
         <section id="control-panel">
           <h3>Simone</h3>
-          <div id="ctrl-btn-container"></div>
+          <div id="ctrl-btn-container">
+            <section class="game-skill-sliders">
+              <div class="game-skill-container">
+                <label>Game</label>
+                <input id ="game" type="range" min="1" max="3" step="1">
+              </div>
+              <div class="game-skill-container">
+                <label>Skill Level</label>
+                <input id="skill" type="range" min="1" max="3" step="1">
+              </div>
+            </section>
+            <section class="ctrl-btns-container">
+              <div class="ctrl-btn"><button class="yellow"></button></div>
+              <div class="ctrl-btn"><button class="red"></button></div>
+              <div class="ctrl-btn"><button class="yellow"></button></div>
+            </section>
+            <section class="on-off-container">
+              <div class="on-off">
+                <label>OFF</label>
+                  <input id="on-off-slider" type="range" min="1" max="2">
+                <label>ON</label>
+              </div>
+            </section>
+          </div>
         </section>
+
       <section>
     </main>
-    <footer>copyright &copy; 2019 SHANLONAUDIOPLAYER</footer>
+    <footer>copyright &copy; 2019 SHANLON</footer>
   <script type="text/javascript" src="script.js"></script>
   </body>
 </html>

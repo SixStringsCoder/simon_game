@@ -22,6 +22,13 @@ footer {
   border-top: 1px solid black;
 }
 
+h1 {
+  padding: 5px 0 ;
+  font-family: 'Coda Caption', sans-serif;
+  font-size: 2.3rem;
+  color: #000;
+}
+
 #outerbody {
   width: 650px;
   height: 650px;
@@ -30,7 +37,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 20px 0;
+  margin: 10px 0;
 }
 
 #pad-container {
@@ -82,11 +89,12 @@ footer {
   background: rgba(170, 240, 209, 1);
 }
 
+/* Center Control Panel*/
 #control-panel {
   position: absolute;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   width: 250px;
   height: 250px;
@@ -96,8 +104,8 @@ footer {
 }
 
 #control-panel h3 {
-  margin: 25px 0;
-/*   padding: 0; */
+  margin: 33px 0 21px 0;
+  padding: 0 0 0 0 ;
   font-family: 'Coda Caption', sans-serif;
   font-size: 2.3rem;
   color: #FFF;
@@ -105,7 +113,109 @@ footer {
 
 #ctrl-btn-container {
   width: 220px;
-  height: 110px;
+  height: 135px;
+/*   margin-top: 5px; */
   border-radius:  0 0 220px 220px;
-  background: silver;
+  background-color: silver; /* For browsers that do not support gradients */
+  background-image: radial-gradient(#C8C8C8, #DCDCDC, #B0B0B0); /* Standard syntax (must be last) */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  align-content: space-between;
+}
+
+.game-skill-sliders {
+  width: 100%;
+  grid-row: 1 / 1 ;
+  grid-column: 1 / span 5;
+  display: flex;
+  justify-content: space-evenly;
+
+}
+
+.game-skill-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.on-off {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+label {
+  font-size: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0 5px;
+}
+
+input[type="range"] {
+  -webkit-appearance: none !important;
+  width: 60px;
+	margin: 0px;
+	padding: 0px;
+  background: #000;
+  height: 13px;
+  outline: none;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none !important;
+  background: radial-gradient(#FFF, green);
+  height:11px;
+  width:11px;
+/* 	border-radius:100%; */
+	cursor:pointer;
+}
+
+.ctrl-btns-container {
+  width: 70%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.ctrl-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+button {
+  width: 18px;
+  height: 18px;
+  border-radius: 100%;
+  background: black;
+}
+.red {
+  background: red;
+  border: 1px solid red;
+  box-shadow: 0 0 5px white;
+  opacity: 1;
+  outline: none;
+}
+.yellow {
+  background: yellow;
+  border: 1px solid yellow;
+  box-shadow: 0 0 7px white;
+  opacity: 1;
+  outline: none;
+}
+.red:active,
+.yellow:active {
+  opacity: .6;
+}
+
+.on-off-container {
+  display: flex;
+  justify-content: center;
+}
+
+#on-off-slider {
+  width: 30px;
 }
