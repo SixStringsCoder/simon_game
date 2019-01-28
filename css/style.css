@@ -56,36 +56,36 @@ h1 {
   width: 280px;
   height: 280px;
 }
-#pad1 {
+#pad0 {
   border-radius: 100% 0 0 0;
   margin: 0 10px 10px 0;
   background: rgba(204, 255, 0, .8);
 }
-#pad2 {
+#pad1 {
   border-radius: 0 100% 0 0;
   margin: 0 0 10px 10px;
   background: rgba(255, 0, 204, .8);
 }
-#pad3 {
+#pad2 {
   border-radius: 0 0 0 100%;
   margin: 10px 10px 0 0;
   background: rgba(255, 204, 51, .8);
 }
-#pad4 {
+#pad3 {
   border-radius: 0 0 100% 0;
   margin: 10px 0 0 10px;
   background: rgba(170, 240, 209, .8);
 }
-#pad1:active {
+#pad0:active {
    background: rgba(204, 255, 0, 1);
 }
-#pad2:active {
+#pad1:active {
   background: rgba(255, 0, 204, 1);
 }
-#pad3:active {
+#pad2:active {
   background: rgba(255, 204, 51, 1);
 }
-#pad4:active {
+#pad3:active {
   background: rgba(170, 240, 209, 1);
 }
 
