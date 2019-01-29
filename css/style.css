@@ -59,34 +59,45 @@ h1 {
 #pad0 {
   border-radius: 100% 0 0 0;
   margin: 0 10px 10px 0;
-  background: rgba(204, 255, 0, .8);
+  background: rgb(204, 255, 0);
 }
 #pad1 {
   border-radius: 0 100% 0 0;
   margin: 0 0 10px 10px;
-  background: rgba(255, 0, 204, .8);
+  background: rgb(255, 0, 204);
 }
 #pad2 {
   border-radius: 0 0 0 100%;
   margin: 10px 10px 0 0;
-  background: rgba(255, 204, 51, .8);
+  background: rgb(255, 204, 51);
 }
 #pad3 {
   border-radius: 0 0 100% 0;
   margin: 10px 0 0 10px;
-  background: rgba(170, 240, 209, .8);
+  background: rgb(170, 240, 209);
 }
 #pad0:active {
-   background: rgba(204, 255, 0, 1);
+   background: rgb(204, 255, 0);
+   opacity: 1;
 }
 #pad1:active {
-  background: rgba(255, 0, 204, 1);
+  background: rgb(255, 0, 204);
+  opacity: 1;
 }
 #pad2:active {
-  background: rgba(255, 204, 51, 1);
+  background: rgb(255, 204, 51);
+  opacity: 1;
 }
 #pad3:active {
-  background: rgba(170, 240, 209, 1);
+  background: rgb(170, 240, 209);
+  opacity: 1;
+}
+
+.opacityDim {
+ opacity: .8;
+}
+.opacityFull {
+ opacity: 1;
 }
 
 /* Center Control Panel*/
