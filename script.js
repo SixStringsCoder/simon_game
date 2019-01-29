@@ -44,8 +44,8 @@ const youPlayPad = (event) => {
   let number = parseInt(event.target.attributes.name.value);
   const tone = new Audio(`audio/tone${number}.mp3`);
   tone.play();
-  $(event.target.id).addClass('opacityFull');
-  setTimeout(() => $('event.target.id').removeClass('opacityFull'), 200);
+  $(`#${event.target.id}`).addClass('opacityFull');
+  setTimeout(() => $(`#${event.target.id}`).removeClass('opacityFull'), 200);
   playerAnswer.push(number);
   checkPlayerAnswer(playerAnswer);
 }

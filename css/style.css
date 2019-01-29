@@ -76,7 +76,7 @@ h1 {
   margin: 10px 0 0 10px;
   background: rgb(170, 240, 209);
 }
-#pad0:active {
+/* #pad0:active {
    background: rgb(204, 255, 0);
    opacity: 1;
 }
@@ -91,7 +91,7 @@ h1 {
 #pad3:active {
   background: rgb(170, 240, 209);
   opacity: 1;
-}
+} */
 
 .opacityDim {
  opacity: .8;
