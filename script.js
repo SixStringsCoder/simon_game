@@ -1,14 +1,16 @@
 // Challenge Array
 const challenge = [];
-const playerAnswer = [];
+const playerAnswers = [];
 let simonePlaying = false;
 let gameGoing = false;
+// let counter = 0;
 
 // Instantiate audio
 const tone0 = new Audio("audio/tone0.mp3");
 const tone1 = new Audio("audio/tone1.mp3");
 const tone2 = new Audio("audio/tone2.mp3");
 const tone3 = new Audio("audio/tone3.mp3");
+const loser = new Audio("audio/loser.mp3");
 
 // Set Object References
 const pad0 = document.querySelector('#pad0');
@@ -27,11 +29,11 @@ playgame.addEventListener('click', () => {
       gameGoing = true;
       simonePlaying = true;
       simonesTurn(challenge);
-      console.log(challenge);
-      playerAnswer.splice(0, playerAnswer.length);
+      // console.log(challenge);
+      // playerAnswers.splice(0, playerAnswers.length);
     }
     if(!gameGoing) {
-      challenge.splice(0, playerAnswer.length);
+      challenge.splice(0, playerAnswers.length);
       gameGoing = true;
     }
 })
@@ -45,6 +47,7 @@ const simonesTurn = (challengeArray) => {
         clearInterval(playChallenge);
         simonePlaying = false;
       } else {
+        simonePlaying = true;
         let tone = new Audio(`audio/tone${challengeArray[index]}.mp3`);
         tone.play();
         let number = challengeArray[index];
@@ -60,36 +63,39 @@ const youPlayPad = (event) => {
   // play tone
   const tone = new Audio(`audio/tone${number}.mp3`);
   tone.play();
-  // brighten light
+  // brighten light effect
   $(`#${event.target.id}`).addClass('opacityFull');
   setTimeout(() => $(`#${event.target.id}`).removeClass('opacityFull'), 200);
 
-  playerAnswer.push(number);
-  checkPlayerAnswer(playerAnswer);
+  playerAnswers.push(number);
+  checkPlayerAnswer(playerAnswers);
   simonePlaying = false;
 }
 
 
 const checkPlayerAnswer = (answers) => {
   answers.forEach((answer, index) => {
+    console.log(index);
+    let i = answers.indexOf(answer);
     if (answer !== challenge[index]) {
-      console.log("WRONG! GAME OVER--->", "my: " + playerAnswer, "Simone: " + challenge)
-      playerAnswer.splice(0, playerAnswer.length);
+      loserSFX();
+      showLoserMSG();
+      console.log(`WRONG! GAME OVER---> my: ${playerAnswers}, Simone: ${challenge}`);
+      playerAnswers.splice(0, playerAnswers.length);
       challenge.splice(0, challenge.length);
       gameGoing = false;
     } else if (answer === challenge[index]) {
       console.log("CORRECT!");
-      console.log("my: " + playerAnswer, "Simone: " + challenge);
+      console.log(`my: ${playerAnswers}, Simone: ${challenge}`);
     }
-    if (answer === challenge[index] && playerAnswer.length === challenge.length) {
-      console.log("MOVING ON");
-      playerAnswer.splice(0, playerAnswer.length);
+    if (playerAnswers.length === challenge.length) {
+      playerAnswers.splice(0, playerAnswers.length);
       setTimeout(continuePlay, 750);
+      console.log("MOVING ON!  Simone's Turn");
     }
-  })
+
+  });
 }
-
-
 
 const continuePlay = () => {
   if (gameGoing) {
@@ -101,3 +107,14 @@ const randomNumber = () => {
   let number = Math.floor(Math.random() * 4);
   challenge.push(number);
 }
+
+// LOST the GAME
+const loserSFX = () => {
+  loser.volume = 1;
+  loser.play();
+}
+const showLoserMSG = () => {
+  document.querySelector('.loser-msg').classList.add('show');
+  setTimeout(hideLoserMSG, 25000);
+}
+const hideLoserMSG = () => document.querySelector('.loser-msg').classList.remove('show');

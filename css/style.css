@@ -40,6 +40,32 @@ h1 {
   margin: 10px 0;
 }
 
+.loser-msg {
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: absolute;
+  top: -50vh;
+  left: -100vw;
+  background: black;
+  transition: all 1s;
+}
+
+.loser-msg::after {
+  content: "YOU LOSE!";
+  font-size: 4rem;
+  font-family: monospace;
+  color: white;
+}
+
+.show {
+  top: 30vh;
+  left: 33vw;
+}
+
 #pad-container {
 /*   border: 1px solid green; */
   width: 600px;
