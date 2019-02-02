@@ -3,7 +3,6 @@ const challenge = [];
 const playerAnswers = [];
 let simonePlaying = false;
 let gameGoing = false;
-// let counter = 0;
 
 // Instantiate audio
 const tone0 = new Audio("audio/tone0.mp3");
@@ -29,8 +28,7 @@ playgame.addEventListener('click', () => {
       gameGoing = true;
       simonePlaying = true;
       simonesTurn(challenge);
-      // console.log(challenge);
-      // playerAnswers.splice(0, playerAnswers.length);
+      playerAnswers.splice(0, playerAnswers.length);
     }
     if(!gameGoing) {
       challenge.splice(0, playerAnswers.length);
@@ -68,32 +66,34 @@ const youPlayPad = (event) => {
   setTimeout(() => $(`#${event.target.id}`).removeClass('opacityFull'), 200);
 
   playerAnswers.push(number);
-  checkPlayerAnswer(playerAnswers);
+  console.log(playerAnswers.length);
+  checkPlayerAnswer();
   simonePlaying = false;
 }
 
-
-const checkPlayerAnswer = (answers) => {
-  answers.forEach((answer, index) => {
-    console.log(index);
-    let i = answers.indexOf(answer);
+const checkPlayerAnswer = () => {
+  playerAnswers.forEach((answer, index) => {
+    console.log(`My ${answer} at index: ${index}`);
+    console.log(`Simone's ${challenge[index]} at index: ${index}`);
+    // Wrong Answer sequence
     if (answer !== challenge[index]) {
       loserSFX();
       showLoserMSG();
-      console.log(`WRONG! GAME OVER---> my: ${playerAnswers}, Simone: ${challenge}`);
+      console.log(`That answer was WRONG! Summary --> my: ${playerAnswers}, Simone: ${challenge}`);
       playerAnswers.splice(0, playerAnswers.length);
       challenge.splice(0, challenge.length);
       gameGoing = false;
-    } else if (answer === challenge[index]) {
-      console.log("CORRECT!");
-      console.log(`my: ${playerAnswers}, Simone: ${challenge}`);
+      // Right answer
+    } else if (answer === challenge[index] ) {
+      console.log("That answer was CORRRECT!");
+      // Right answer and the last answer of the current sequence
+      if (playerAnswers.length === challenge.length && index === playerAnswers.length-1) {
+        console.log("playerAnswers: " + playerAnswers);
+        console.log("MOVING ON!  Simone's Turn");
+        playerAnswers.splice(0, playerAnswers.length);
+        setTimeout(continuePlay, 750);
+      }
     }
-    if (playerAnswers.length === challenge.length) {
-      playerAnswers.splice(0, playerAnswers.length);
-      setTimeout(continuePlay, 750);
-      console.log("MOVING ON!  Simone's Turn");
-    }
-
   });
 }
 
@@ -115,6 +115,6 @@ const loserSFX = () => {
 }
 const showLoserMSG = () => {
   document.querySelector('.loser-msg').classList.add('show');
-  setTimeout(hideLoserMSG, 25000);
+  setTimeout(hideLoserMSG, 3000);
 }
 const hideLoserMSG = () => document.querySelector('.loser-msg').classList.remove('show');
