@@ -3,7 +3,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: rgba(0, 255, 0, .8);
+  background: rgba(5, 84, 5, .8);
 }
 
 header, footer {
@@ -55,7 +55,7 @@ h1 {
 }
 
 .loser-msg::after {
-  content: "YOU LOSE!";
+  content: "GAME OVER!";
   font-size: 4rem;
   font-family: monospace;
   color: white;
@@ -63,7 +63,7 @@ h1 {
 
 .show {
   top: 30vh;
-  left: 33vw;
+  left: 36vw;
 }
 
 #pad-container {
@@ -102,22 +102,6 @@ h1 {
   margin: 10px 0 0 10px;
   background: rgb(170, 240, 209);
 }
-/* #pad0:active {
-   background: rgb(204, 255, 0);
-   opacity: 1;
-}
-#pad1:active {
-  background: rgb(255, 0, 204);
-  opacity: 1;
-}
-#pad2:active {
-  background: rgb(255, 204, 51);
-  opacity: 1;
-}
-#pad3:active {
-  background: rgb(170, 240, 209);
-  opacity: 1;
-} */
 
 .opacityDim {
  opacity: .8;
@@ -211,6 +195,7 @@ input[type="range"]::-webkit-slider-thumb {
 
 .ctrl-btns-container {
   width: 70%;
+  height: 13%;
   display: flex;
   justify-content: space-evenly;
 }
@@ -228,6 +213,16 @@ button {
   height: 18px;
   border-radius: 100%;
   background: black;
+}
+#btn-label-area {
+  width: 70%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.btn-label {
+  font-size: .8rem;
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 .red {
   background: red;
