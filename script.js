@@ -64,11 +64,12 @@ const youPlayPad = (event) => {
   // brighten light effect
   $(`#${event.target.id}`).addClass('opacityFull');
   setTimeout(() => $(`#${event.target.id}`).removeClass('opacityFull'), 200);
-
-  playerAnswers.push(number);
-  console.log(playerAnswers.length);
-  checkPlayerAnswer();
-  simonePlaying = false;
+  // Allows person to play the pads even if no game is underway
+  if (gameGoing) {
+    playerAnswers.push(number);
+    checkPlayerAnswer();
+    simonePlaying = false;
+  }
 }
 
 const checkPlayerAnswer = () => {
